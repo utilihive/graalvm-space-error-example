@@ -1,2 +1,3 @@
 === Steps to reproduce the error:
-1. run `mvn test -Dmaven.repo.local="$PWD/target/maven repo" -Dtest=SimpleScriptTest`
+
+1. run `mvn test -Dmaven.repo.local="maven repo" -Dtest=SimpleScriptTest`

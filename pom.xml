@@ -12,7 +12,7 @@
         <!-- Dependency versions -->
         <kotlin.version>1.6.10</kotlin.version>
         <org.jetbrains.annotations.version>23.0.0</org.jetbrains.annotations.version>
-        <graalvm.version>21.1.0</graalvm.version>
+        <graalvm.version>22.0.0.2</graalvm.version>
         <junit.version>4.13.2</junit.version>
         <maven-surefire.version>3.0.0-M5</maven-surefire.version>
 
@@ -92,7 +92,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -104,7 +103,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -119,6 +117,9 @@
                     <!--
                         Disable forking so we can see the log output from the test immediately, instead of at the
                         end of each test execution.
+
+                        NOTE: Setting this to 1 removes the "Cannot locate js language home due to Illegal character in path"
+                              when the maven repo path has a space in it.
                      -->
                     <forkCount>0</forkCount>
                 </configuration>
